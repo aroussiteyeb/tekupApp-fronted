@@ -1,0 +1,30 @@
+.profile-container{
+    background-color: rgb(235, 235, 235);
+    height: 100%;
+    padding : 0;
+    padding-bottom: 1vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-container > .nav-bar-component{
+    padding-top: 1vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
+
+.nav-bar-component{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.below-nav{
+    margin : auto;
+    width: 80vw;
+}
+
+.profile-body{
+    margin-top: 1vh;
+    justify-content: safe;
+}

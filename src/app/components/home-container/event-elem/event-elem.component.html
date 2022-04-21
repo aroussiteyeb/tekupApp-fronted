@@ -1,0 +1,41 @@
+<div class="box">
+    <div class="event-elem-wrapper">
+        <div class="event-header">
+            <div class="image-wrapper">
+                <img class="circular" src="assets/images/auth-first-background.jpg" width="50px" height="50px">
+            </div>
+            <div class="name-time">
+                <div class="club-name">Activix</div>
+                <div class="post-time">5 hrs ago</div>
+            </div>
+           
+        </div>
+        <div class="event-body">
+            <h3 class="event-title">Our Event Title</h3>
+            <p>
+                We are starting to develop an application 
+                and we are organizing this event to try to publicly
+                show a demo of this project of ours
+            </p>        
+            <div class="body-image-wrapper">
+                <img src="assets/images/auth-first-background.jpg" width="100%" class="body-image-wrapper">
+            </div>
+        </div>
+        <div class="event-footer">
+            <div #reactions (click)="selectedReact(0)" class="reaction transition-2s">
+                <fa-icon [icon]="notInterestedIcon"></fa-icon><span>Not Interested</span>
+            </div>
+            <div #reactions (click)="selectedReact(1)" class="reaction transition-2s">
+                <fa-icon [icon]="interestedIcon" ></fa-icon><span>Interested</span>
+            </div>
+            <div #reactions (click)="selectedReact(2)" class="reaction transition-2s">
+                <fa-icon [icon]="goingIcon"></fa-icon><span>Going</span>
+            </div>
+        </div>
+        <hr>
+        <app-post-reaction-row></app-post-reaction-row>
+        <hr>
+    </div>
+    <app-comment-form></app-comment-form>
+    <app-comment-list></app-comment-list>
+</div>

@@ -1,0 +1,25 @@
+<div class="post-form-wrapper">
+    <div class="inner-wrap">
+        <h4 style="text-align: center;" class="post-form-title" >Post something</h4>
+        <form [formGroup]="postForm" (ngSubmit)="addPost()" method="POST" name="form" enctype="multipart/form-data">
+            <div class="first-row">
+                <div class="pfp-wrapper">
+                    <img class="pfp" [src]="pfpPath | userDefaultPfp" width="50px" height="50px">
+                </div>
+                <div class="input-wrapper">
+                    <textarea id="text" name="text" formControlName="text" type="text" class="form-control text-area" placeholder="What's on your mind ?"></textarea>
+                </div>
+            </div>
+            <div class="second-row choose-img-vid">
+                <div (click)="mediaUploadClick(mediaInput)" class="second-row-sect">
+                    <fa-icon class="fa-solid" transform="grow-15 right-4" [icon]="imageUploadIcon"></fa-icon>
+                    <span> choose Image</span>
+                </div>    
+                <input #mediaInput hidden id="media" (input)="fileChosen($event)" name="media" value="Choose an image" type="file" class="form-control-file cf-input">
+            </div>
+            <div class="post-btn-wrapper">
+                <button type="submit" class="btn btn-primary">Post</button>            
+            </div>
+        </form>
+    </div>
+</div>

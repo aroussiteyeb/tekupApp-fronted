@@ -1,0 +1,19 @@
+<div class="comment-form-wrapper">
+    <div class="image-wrapper">
+        <img class="pfp-image" [src]="pfpPath | userDefaultPfp" width="40px" height="40px">
+    </div>
+    <div class="input-wrapper">
+        <input #textInput type="text" (keyup.enter)="postComment()"[(ngModel)]="commentText" [placeholder]="commentInputPlaceholder" class="form-control">
+        <div class="attachements">
+            <div class="attach-icon transition-2s">
+                <fa-icon [icon]="imageIcon"></fa-icon>
+            </div>
+            <div class="attach-icon transition-2s">
+                <fa-icon [icon]="vocalIcon" ></fa-icon>
+            </div>
+            <div class="attach-icon transition-2s">
+                <fa-icon [icon]="documentAttachementIcon" ></fa-icon>
+            </div>
+        </div>
+    </div>
+</div>

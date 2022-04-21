@@ -1,0 +1,18 @@
+<div class="home-container">
+    <div class="nav-bar-component">
+        <app-navigation-bar [currentUserId]="currentUserId" ></app-navigation-bar>
+    </div>
+    <div class="below-nav">
+            <div class="aside-component ends-col">
+                <app-aside></app-aside>
+            </div>
+            
+            <div class="main-component main-col">
+                <router-outlet></router-outlet>
+            </div>
+            
+            <div class="chats-list-components ends-col">
+                <app-chat-list [currentUserId]="currentUserId"></app-chat-list>
+            </div>
+    </div>
+</div>

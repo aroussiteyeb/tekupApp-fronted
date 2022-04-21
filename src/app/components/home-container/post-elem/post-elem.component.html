@@ -1,0 +1,82 @@
+<div class="post-elem-wrapper" *ngIf="post?._id">
+    <div class="post-header">
+
+        <div class="header-first-row">
+            <div class="pfp-image-wrap">
+                <img class="pfp-image" [src]="pfpPath | userDefaultPfp" width="50px" height="50px">
+            </div>
+            <div class="user-name-wrap">
+                <span>{{user?.name | titlecase}} {{user?.lastName | titlecase}}</span>
+            </div>
+            <div class="date-wrap">
+                <span>{{post?.creationDate | timePeriod}}</span>
+            </div>
+
+
+            <div>
+                <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="showFormUpdate()">
+                        <mat-icon>update</mat-icon>
+                        <span>Update</span>
+                    </button>
+                    <button mat-menu-item (click)="deletePost(post?._id)">
+                        <mat-icon>delete_outline</mat-icon>
+                        <span>delete</span>
+                    </button>
+
+                </mat-menu>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <div class="post-body">
+        <div class="body-text-wrap">
+            <p class="body-text" *ngIf="!update && editText==null"> {{post?.text}} </p>
+            <p class="body-text" *ngIf="!update && editText!=null"> {{editText}} </p>
+
+            <div  class="reactions-count-wrapper"  *ngIf="update">
+                <div class="comments-count">
+                    <textarea id="textarea" name="text" type="text" [(ngModel)]="editText" class="form-control text-area" [(ngModel)]="editText" value="post.text" placeholder="Edit your post "></textarea></div>
+                <div>
+                    <button  type="submit" id="btnUpdate" class="btn btn-primary" (click)="updatePost(post?._id)">Post</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="media" class="body-image-wrap">
+            <img [src]="media | postMedia" width="100%" alt="">
+        </div>
+
+        <div class="reactions-count-wrapper">
+            <div class="likes-count">
+                <div class="react-count-font">
+                    <fa-icon class="fa-sm" [icon]="likeIcon"></fa-icon>
+                    <span style="margin-left : 5px">{{likesCount}}</span>
+                </div>
+            </div>
+            <div class="comments-count"><span class="react-count-font">{{commentsCount}} comments</span></div>
+            <div class="shares-count"><span class="react-count-font">14 shares</span></div>
+        </div>
+
+        <hr>
+        <app-post-reaction-row [likeFound]="userLikeFound" [commentFound]="userCommentFound"
+            (likePressed)="addOrDeleteLike($event)" (commentPressed)="focusComment($event)"
+            (sharePressed)="addShare($event)">
+        </app-post-reaction-row>
+        <hr>
+        <div class="make-comment-wrapper">
+            <app-comment-form [cf]="commentPressed" [idParent]="idPost" [idUser]="currentUser._id"></app-comment-form>
+        </div>
+    </div>
+    <div class="comments-list-wrapper">
+        <app-comment-list [postUserId]="postUserId" [comments]="comments"></app-comment-list>
+    </div>
+</div>
+<p>
+    <ngb-alert *ngIf="dismissible" [dismissible]="false" type='success'>Success! Post deleted.</ngb-alert>
+</p>

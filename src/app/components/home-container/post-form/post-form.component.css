@@ -1,0 +1,90 @@
+.post-form-wrapper{
+    background-color: white;
+    padding : 2vh;
+    border-radius: 5px;
+    border : 1px solid rgb(8, 75, 131)
+}
+
+.post-form-title{
+    margin-top: 1vh;
+}
+
+.row-1-2-wrap{
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.4) 1px 2px 2px;
+}
+
+.cf-input{
+    width: 30%;
+    margin : auto;
+}
+
+.first-row{
+    display: flex;
+    direction: ltr;
+    padding : 2vh;
+}
+
+.second-row{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1vw;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-row-sect{
+    display: flex;
+    flex-direction: row;
+    column-gap: 2vw;
+    color : rgb(137, 221, 137);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px
+}
+
+.second-row-sect:hover{
+    background-color: rgb(245, 245, 245);
+}
+
+.pfp-wrapper{
+    height : inherit;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding : 2px;
+}
+
+.pfp{
+    border-radius: 50%;
+}
+
+.input-wrapper{
+    flex : auto;
+}
+
+.text-area{
+    background-color: rgb(218, 218, 218);
+}
+
+.text-area:hover{
+    background-color: rgb(243, 243, 243);
+}
+.text-area:focus{
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.4) 1px 2px 2px;
+}
+
+.post-btn-wrapper{
+    margin-top:1vh;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.btn{
+    width: 100%;
+}

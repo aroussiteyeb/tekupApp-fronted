@@ -1,0 +1,27 @@
+.chat-list-wrapper{
+    border-radius: 5px;
+    background-color: white;
+    background : white;
+    border : 1px solid rgb(8, 75, 131);
+    padding : 1vh;
+}
+
+.chat-list-header{
+    margin : 1vh 0;
+}
+
+.chat-list-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-elem{
+    margin-bottom: 1vh;
+    padding: 1vh;
+    border-radius: 20px;
+    cursor : pointer;
+}
+
+.chat-elem:hover{
+    background-color: rgb(238, 238, 238);
+}

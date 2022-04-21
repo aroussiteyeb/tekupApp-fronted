@@ -1,0 +1,51 @@
+.inner-form{
+    height: 55%;
+    margin-top: 4vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+}
+
+.form-pack{
+    flex : 1;
+}
+
+.auth-input:first-child{
+    padding : 1.5vh;
+    width: 80%;
+}
+
+fa-icon{
+    cursor: pointer;
+}
+
+.btn{
+    width: 50%;
+    margin : auto;
+}
+
+.pass-elem:first-child{
+    float: left;
+    margin-right : 1em;
+}
+
+.pass-elem:last-child{
+    float: left;
+}
+
+.modal-custom{
+    background-color: white;
+    z-index : 100;
+    position : fixed;
+    width: 40vw;
+    height:fit-content;
+    margin : auto;
+}
+
+.hidden{
+    display : none;
+}
+
+.show{
+    display : block;
+}

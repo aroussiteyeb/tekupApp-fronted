@@ -1,0 +1,16 @@
+<div class="profile-aside-section">
+    <div class="aside-section-header">
+        <h5>Friends</h5>
+    </div>
+    <div class="aside-gallery-body">
+        <div *ngFor="let imgName of files"  class="image-wrapper">
+            <img 
+                class="friend-pfp-image"
+                [src]="basePath+imgName" 
+                [alt]="imgName"
+                width="80px"
+                height="110px">
+            <p style="word-break: break-all;" >Mohamed Seddik</p>
+        </div>
+    </div>
+</div>

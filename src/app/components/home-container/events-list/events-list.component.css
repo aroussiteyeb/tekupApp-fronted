@@ -1,0 +1,349 @@
+.event-list-wrapper{
+    padding-top: 8px;
+}
+
+.box{
+    background-color: rgb(245, 245, 245);
+}
+
+.event-elem-wrapper{
+    border-radius: 5px;
+    padding:  1.5vh;
+    background-color: white;
+}
+
+.event-header{
+    display: flex;
+    direction: ltr;
+    gap : 2vw;
+}
+
+.selected {
+    background-color: white
+}
+
+.reaction:first-child.selected > *{
+    color : rgb(204, 60, 24);
+}
+
+.reaction:nth-child(2).selected > *{
+    color : rgb(66, 191, 221);
+}
+
+.reaction:last-child.selected > *{
+    color : rgb(19, 161, 19);
+}
+
+.event-body{
+    margin-top: 1vh;
+}
+
+.club-name{
+    font-size: larger;
+}
+
+.post-time{
+    font-weight: 750;
+    font-size: smaller;
+}
+
+.body-image-wrapper{
+    border-radius: 5px;
+}
+
+.event-footer{
+    margin : 1vh 0vh;
+    display: flex;
+    direction: ltr;
+}
+
+.reaction{
+    flex : 1;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+    color : rgb(195, 200, 201);
+    border-radius: 20px;
+    padding : 1vh;
+    margin-top: 1vh;
+}
+
+.pointer-cursor{
+    cursor : pointer;
+}
+
+.reaction:hover{
+    color : black;
+    background-color: rgb(187, 230, 228) ;
+    cursor: pointer;
+}
+
+.reaction > fa-icon {
+    margin-right: 1vw;
+}
+
+.post-form-wrapper{
+    background-color: white;
+    padding : 2vh;
+    border-radius: 5px;
+    border : 1px solid rgb(8, 75, 131)
+}
+
+.post-form-title{
+    margin-top: 1vh;
+}
+
+.row-1-2-wrap{
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.4) 1px 2px 2px;
+}
+
+.cf-input{
+    width: 30%;
+    margin : auto;
+}
+
+.first-row{
+    display: flex;
+    direction: ltr;
+    padding : 2vh;
+}
+
+.second-row{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1vw;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-row-sect{
+    display: flex;
+    flex-direction: row;
+    column-gap: 2vw;
+    color : rgb(137, 221, 137);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px
+}
+
+.second-row-sect:hover{
+    background-color: rgb(245, 245, 245);
+}
+
+.pfp-wrapper{
+    height : inherit;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding : 2px;
+}
+
+.pfp{
+    border-radius: 50%;
+}
+
+.input-wrapper{
+    flex : auto;
+}
+
+.text-area{
+    background-color: rgb(218, 218, 218);
+}
+
+.text-area:hover{
+    background-color: rgb(243, 243, 243);
+}
+.text-area:focus{
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.4) 1px 2px 2px;
+}
+
+.post-btn-wrapper{
+    margin-top:1vh;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.btn{
+    width: 100%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+.comment-form-wrapper{
+    display: flex;
+    direction: ltr;
+    margin-top: 1vh;
+}
+
+.image-wrapper{
+    padding : 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    flex-wrap: wrap;
+}
+
+.pfp-image{
+    border-radius: 50%;
+}
+
+.input-wrapper{
+    padding : 0 5px;
+    height : 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    flex : auto;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1vw;
+}
+
+.attachements{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5vw;
+}
+
+.attachements .attach-icon{
+    padding : 4px ;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height : 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.attachements .attach-icon:hover{
+    background-color: rgb(236, 236, 236);
+    color : rgb(255, 102, 179);
+}
+
+.form-control{
+    background-color: rgb(240, 240, 240);
+}
+
+.form-control:hover{
+    background-color: white;
+}
+
+.comment-wrapper{
+    padding: 5px;
+}
+
+.comment-header{
+    display: flex;
+    flex-direction: row;
+    gap : 1vh
+}
+
+.pfp-img-wrapper{
+    flex-wrap: wrap;
+}
+
+
+.pfp-img{
+    border-radius: 50%;
+}
+
+.user-name{
+    flex : 1;
+    font-weight: 500;
+    display: flex ;
+    flex-direction: row;
+}
+
+.more-options{
+    color : rgb(143, 143, 143);
+    font-weight: 600;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.more-options:hover{
+    color: rgb(0, 0, 0);
+}
+
+.comment-date{
+    flex-wrap: wrap;
+    text-align: right;
+    font-weight: 600;
+    font-size: smaller;
+}
+
+.comment-body{
+    border-radius: 7px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.comment-text{
+    margin: 1vh;
+    padding: 1vw;
+    border-radius : 5px;
+    background-color: white;
+    width: fit-content;
+    box-shadow: rgba(0,0,0,0.2) 0.5px 0.5px 1vh ;
+}
+
+.badge-secondary{
+    background-color: rgba(0,0,0,0);
+    color : rgb(255, 102, 179);
+    font-weight: 200;
+    border: 0.5px rgb(255, 102, 179) solid;     
+}
+
+.dropdown-menu{
+    background-color: rgba(0,0,0,0);
+    width: 4vw;
+    margin: auto;
+    border : none;
+    outline : none;
+}
+
+.options-list{
+    display: flex;
+    background-color: rgba(0,0,0,0);
+    flex-direction: column;
+    row-gap: 1vh;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    margin-left: 2vw;
+    border : none;
+    outline: none;
+}
+
+.edit-icon-wrapper{
+    color : rgb(66, 191, 221)
+}
+
+.edit-icon-wrapper:hover{
+    color : rgb(43, 123, 143)
+}
+
+.delete-icon-wrapper{
+    color : rgb(187, 52, 28)
+}
+
+.delete-icon-wrapper:hover{
+    color : rgb(109, 31, 17)
+}

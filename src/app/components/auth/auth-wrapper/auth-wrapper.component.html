@@ -1,0 +1,8 @@
+<div class="row auth-wrapper">
+    <div class="col">
+        <app-auth-first></app-auth-first>
+    </div>
+    <div class="col">
+        <app-auth-second (successEmitter)="showModel($event)"></app-auth-second>    
+    </div>
+</div>

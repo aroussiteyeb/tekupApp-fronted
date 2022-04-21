@@ -1,0 +1,42 @@
+.input-wrapper {
+    margin-bottom: 2vh;
+    background-color: rgb(235, 235, 235);
+    border-radius: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top : 10px;
+    padding-bottom: 10px;
+    position: relative;
+    color: black
+}
+
+.input-focus{
+    outline: 4px solid rgba(36, 214, 238, 0.568);
+    background-color: white;
+    transition: all .1s ease-out;
+    box-shadow: rgba(50, 50, 50) 2px 2px 2px;
+}
+
+.input-wrapper > .icon {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+}
+
+.input-wrapper > input {
+    padding-left: 40px;
+    padding-right: 10px;
+}
+
+input:focus {
+    outline : none;
+    margin: auto;
+    transition: all .2s ease-out;
+    background-color: white;
+}
+
+input{
+    background-color: rgb(235, 235, 235);
+    width : 100%;
+    margin: auto;
+}

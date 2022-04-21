@@ -1,0 +1,14 @@
+<div class="inner-form">
+    <div class="form-pack">
+        <input [(ngModel)]="email" placeholder="Email" class="auth-input" type="text" name="email" id="email">
+    </div>
+    <div class="form-pack">
+        <input [(ngModel)]="password" placeholder="Password" class="auth-input pass-elem" [type]="passType" name="password" id="password">
+        <div (click)="passwordShowHide()" class="icon-wrap">
+            <fa-icon class="pass-elem" [icon]="eyeIcon"></fa-icon>
+        </div>
+    </div>
+    <div class="form-pack btn-wrap">
+        <button [disabled]="submitDisabled" (click)="login()" class="btn btn-primary">Login</button>
+    </div>
+</div>

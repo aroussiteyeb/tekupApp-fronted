@@ -1,0 +1,27 @@
+.reaction-row{
+    display : flex;
+    padding : 1vh;
+    direction: ltr;
+}
+
+.reaction-col{
+    flex : 1;
+    text-align: center;
+}
+
+.reaction-col > fa-icon {
+    margin-right: 1vh;
+}
+
+.reaction-col:hover {
+    color : rgb(66, 191, 221);
+    cursor: pointer;
+}
+
+.reaction-pressed {
+    color : rgb(255, 102, 179)
+}
+
+.reaction-pressed:hover {
+    color : rgb(209, 85, 147)
+}

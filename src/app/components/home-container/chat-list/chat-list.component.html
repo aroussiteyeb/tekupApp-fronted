@@ -1,0 +1,13 @@
+<div class="chat-list-wrapper">
+    <div class="chat-list-header">
+        <h6>Chat with other members</h6>
+    </div>
+    <hr>
+    <div class="chat-list-body">
+        <app-chat-elem 
+            class="chat-elem transition-2s" 
+            [chatMember]="chatElem" 
+            *ngFor="let chatElem of chatList | chatListPipe : currentUserId">
+        </app-chat-elem>
+    </div>
+</div>

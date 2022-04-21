@@ -1,0 +1,4 @@
+<div class="main-wrapper">
+    <app-post-form [idUser]="idUser" (postSumbitted)="refreshPostList($event)" ></app-post-form>
+    <app-posts-list [posts]="posts" (resetRefresh)="resRef($event)" [refresh]="refresh"  ></app-posts-list>
+</div>

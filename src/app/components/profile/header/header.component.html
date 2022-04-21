@@ -1,0 +1,78 @@
+<div class="header-wrapper">
+    <div class="cover-image-wrapper">
+        <img 
+            [src]="coverPath|userDefaultCover" 
+            width="100%" 
+            height="100%"
+            class="cover-image">
+        <button class="change-cover-button btn btn-secondary"  (click)="inputClicked(inputCover)" >
+            <fa-icon [icon]="editIcon"></fa-icon>
+        </button>
+    </div>
+    <div class="profile-header-info row">
+        <div (click)="inputClicked(inputPfp)" class="profile-picture-wrapper col-md-2">
+            <fa-icon class="fa-lg pfp-edit-icon" [icon]="editIcon"></fa-icon>
+            <img 
+                [src]="pfpPath | userDefaultPfp" 
+                width="100%" 
+                height="100%"
+                class="pfp-image-style">
+        </div>
+        <div class="user-info-wrapper col">
+            <h3 class="name-last-name"> {{user?.name | titlecase}} {{user?.lastName | titlecase}} </h3>
+            <p class="friends-number">{{friendsNumber}} friends</p>
+            <input [(ngModel)]="bio" placeholder="Write your bio here..." name="bio" class="form-control" type="text">
+        </div>
+        <div class="btn-wrapper col-md-3">
+            <div class="add-feat">
+                <button class="btn-wrapper-btn btn btn-primary">
+                    <fa-icon style="margin-right: 5px;" [icon]="addIcon"></fa-icon>
+                    <span>add feat</span>
+                </button>
+            </div>
+            <div class="edit-profile">
+                <button class="btn-wrapper-btn btn btn-secondary">
+                    <fa-icon style="margin-right: 5px;" [icon]="editIcon"></fa-icon>
+                    <span>edit profile</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="info-list-bar">
+        <div class="start-inner-bar">
+            <div class="feats">
+                <fa-icon style="margin-right: 4px;" [icon]="featIcon"></fa-icon><span>feats</span>
+            </div>
+            <div class="events">
+                <fa-icon style="margin-right: 4px;" [icon]="eventIcon"></fa-icon><span>events</span>
+            </div>
+            <div class="groups">
+                <fa-icon style="margin-right: 4px;" [icon]="groupIcon"></fa-icon><span>groups</span>
+            </div>
+            <div class="clubs">
+                <fa-icon style="margin-right: 4px;" [icon]="clubIcon"></fa-icon><span>clubs</span>
+            </div>
+        </div>
+        <div class="parting-div"></div>
+        <div class="end-inner-bar">
+            <div class="end-inner-bar-sect">
+                <fa-icon [icon]="featIcon"></fa-icon><span>likes</span>
+            </div>
+            <div class="end-inner-bar-sect">
+                <fa-icon [icon]="eventIcon"></fa-icon><span>posts</span>
+            </div>
+            <div class="end-inner-bar-sect">
+                <fa-icon [icon]="groupIcon"></fa-icon><span>shares</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form #pfpForm hidden enctype="multipart/form-data" >
+<input hidden #inputPfp (input)="choosePfp($event)" type="file" name="pfp">
+</form>
+
+<form #CoverForm hidden enctype="multipart/form-data" >
+    <input hidden #inputCover (input)="chooseCover($event)" type="file" name="cover">
+</form>

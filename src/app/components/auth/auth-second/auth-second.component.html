@@ -1,0 +1,15 @@
+<div class="auth-second-wrapper">
+    <ul class="nav-bar mr-auto row">
+        <li (click)="loginSelect()" #loginLi class="nav-item col active">
+            <span>lOGIN</span>
+        </li>
+        <li (click)="registerSelect()" #registerLi class="nav-item col">
+            <span>REGISTER</span>
+        </li>
+    </ul>
+    
+    <div class="inner-form">
+        <app-login-form  *ngIf="loginActive"></app-login-form>
+        <app-register-form (toLogin)="toLoginTab($event)" *ngIf="!loginActive"></app-register-form>
+    </div>
+</div>

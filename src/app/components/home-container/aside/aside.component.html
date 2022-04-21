@@ -1,0 +1,28 @@
+<div class="aside-wrapper">
+    <div class="aside-header">
+      <div class="pfp-img-wrapper">
+        <img src="/assets/images/auth-first-background.jpg" width="100%" height="100%" alt="">
+      </div>
+      <div routerLink="/profile" class="user-name-wrapper">
+        <span>User Name</span>
+      </div>
+      
+    </div>
+    <div class="aside-links">
+        <div routerLink="/home/main" routerLinkActive="active-link" class="reaction transition-2s link-wrapper">
+          <div><fa-icon class="fa-icon" [icon]="homeIcon"></fa-icon><span>Home</span></div>
+        </div>
+        <div routerLink="/home/groups" routerLinkActive="active-link" class="reaction transition-2s link-wrapper">
+          <div><fa-icon class="fa-icon" [icon]="groupsIcon"></fa-icon><span>Groups</span></div>
+        </div>
+        <div routerLink="/home/events" routerLinkActive="active-link" class="reaction transition-2s link-wrapper">
+          <div><fa-icon class="fa-icon" [icon]="eventsIcon"></fa-icon><span>Events</span></div>
+        </div>
+        <div routerLink="/home/clubs"  routerLinkActive="active-link" class="reaction transition-2s link-wrapper">
+          <div><fa-icon class="fa-icon" [icon]="clubsIcon"></fa-icon><span>Clubs</span></div>
+        </div>
+        <div routerLink="/home/feats" routerLinkActive="active-link" class="reaction transition-2s link-wrapper">
+          <div><fa-icon class="fa-icon" [icon]="featsIcon"></fa-icon><span>Feats</span></div>
+        </div>
+    </div>
+</div>

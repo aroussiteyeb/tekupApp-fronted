@@ -1,0 +1,15 @@
+.chat-list-wrapper{
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.75vw;
+    padding : 1vw;
+}
+
+.pfp{
+    border-radius: 50%;   
+}
+
+.username-wrapper{
+    font-weight: 600;
+    font-size: 14px;
+}

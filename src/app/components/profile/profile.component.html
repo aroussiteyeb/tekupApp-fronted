@@ -1,0 +1,19 @@
+<div class="profile-container">
+    <div class="nav-bar-component">
+        <app-navigation-bar></app-navigation-bar>
+    </div>
+    <div class="below-nav">
+        <div class="profile-header">
+            <app-header [idUser]="currentUserId"></app-header>
+        </div>
+        <div class="profile-body row">
+            <div class="aside col-md-5">
+                <app-profile-aside></app-profile-aside>
+            </div>
+            <div class="profile-posts col">
+                <app-post-form [idUser]="currentUserId"></app-post-form>
+                <app-posts-list [posts]="currentUserPosts"></app-posts-list>
+            </div>
+        </div>
+    </div>
+</div>

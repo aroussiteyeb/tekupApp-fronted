@@ -1,0 +1,13 @@
+<div #inpWrap class="input-wrapper" [id]="'inputWrapper'+idProp">
+    <fa-icon class="icon" [icon]="iconProp"></fa-icon>
+    <input 
+        (focus)="onFocus()"
+        (blur)="onBlur()"
+        style="border: none;"
+        [id]="idProp"
+        [placeholder]="placeholderProp" 
+        ngModel #idProp
+        [value]="valueProp"
+        (keyup)="valueEmit(idProp.value)"
+        [type]="typeProp"/>
+</div>

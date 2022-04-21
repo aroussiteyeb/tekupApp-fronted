@@ -1,0 +1,79 @@
+.box{
+    background-color: rgb(245, 245, 245);
+}
+
+.event-elem-wrapper{
+    border-radius: 5px;
+    padding:  1.5vh;
+    background-color: white;
+}
+
+.event-header{
+    display: flex;
+    direction: ltr;
+    gap : 2vw;
+}
+
+.selected {
+    background-color: white
+}
+
+.reaction:first-child.selected > *{
+    color : rgb(204, 60, 24);
+}
+
+.reaction:nth-child(2).selected > *{
+    color : rgb(66, 191, 221);
+}
+
+.reaction:last-child.selected > *{
+    color : rgb(19, 161, 19);
+}
+
+.event-body{
+    margin-top: 1vh;
+}
+
+.club-name{
+    font-size: larger;
+}
+
+.post-time{
+    font-weight: 750;
+    font-size: smaller;
+}
+
+.body-image-wrapper{
+    border-radius: 5px;
+}
+
+.event-footer{
+    margin : 1vh 0vh;
+    display: flex;
+    direction: ltr;
+}
+
+.reaction{
+    flex : 1;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+    color : rgb(195, 200, 201);
+    border-radius: 20px;
+    padding : 1vh;
+    margin-top: 1vh;
+}
+
+.pointer-cursor{
+    cursor : pointer;
+}
+
+.reaction:hover{
+    color : black;
+    background-color: rgb(187, 230, 228) ;
+    cursor: pointer;
+}
+
+.reaction > fa-icon {
+    margin-right: 1vw;
+}

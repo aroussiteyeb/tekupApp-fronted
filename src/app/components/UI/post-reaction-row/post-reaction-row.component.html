@@ -1,0 +1,11 @@
+<div class="reaction-row">
+    <div #likeElem (click)="likePress()" class="like-wrapper reaction-col">
+        <fa-icon [icon]="likeIcon"></fa-icon><span>Like</span>
+    </div>
+    <div #commentElem (click)="commentPress()" class="comments-wrapper reaction-col">
+        <fa-icon [icon]="commentIcon"></fa-icon><span>Comments</span>
+    </div>
+    <div #shareElem (click)="sharePress()" class="share-wrapper reaction-col">
+        <fa-icon [icon]="shareIcon"></fa-icon><span>share</span>
+    </div>
+</div>

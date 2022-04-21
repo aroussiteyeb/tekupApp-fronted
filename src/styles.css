@@ -1,0 +1,55 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+.auth-input{
+    background: rgb(209, 209, 209);
+    border : none;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    direction: ltr;
+}
+
+.transition-7s{
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+
+.transition-2s{
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+
+.auth-input:focus{
+    background: rgb(255, 255, 255);
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.8) 1px 1vh 1vw ;
+    width : 10rem;
+    padding : 1rem;
+}
+
+.circular{
+    border-radius: 50%;
+}
+
+.box{
+    border-radius: 5px;
+    padding: 0px;
+    border : 1px solid rgb(8, 75, 131);
+}
+
+.inherit-color{
+    color : inherit;
+}
+
+.active-link{
+    background-color: rgb(8, 75, 131) ;
+    color : white;
+}

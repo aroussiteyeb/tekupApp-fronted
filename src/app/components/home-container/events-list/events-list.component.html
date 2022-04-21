@@ -1,0 +1,162 @@
+
+<div class="post-form-wrapper">
+    <div class="inner-wrap">
+        <h4 style="text-align: center;" class="post-form-title" >Add event </h4>
+        <form [formGroup]="eventForm" (ngSubmit)="addEvent()" method="POST" name="form" enctype="multipart/form-data">
+            <div class="first-row">
+                <div class="pfp-wrapper">
+                    <img class="pfp" [src]="pfpPath | userDefaultPfp" width="50px" height="50px">
+                </div>
+                <div class="input-wrapper">
+                    <div  class="example-form">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Event title</mat-label>
+                            <input matInput placeholder="Ex. Developpemet" formControlName="title" value="">
+                          </mat-form-field>
+                        
+                          <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Event subject</mat-label>
+                            <textarea matInput placeholder="Ex. It makes me feel..." formControlName="text"></textarea>
+                          </mat-form-field>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="second-row choose-img-vid">
+                <div (click)="mediaUploadClick(mediaInput)" class="second-row-sect">
+                    <fa-icon class="fa-solid" transform="grow-15 right-4" [icon]="imageUploadIcon"></fa-icon>
+                    <span> choose Image</span>
+                </div>    
+                <input #mediaInput hidden id="media" (input)="fileChosen($event)" name="media" value="Choose an image" type="file" class="form-control-file cf-input">
+            </div>
+            <div class="post-btn-wrapper">
+                <button type="submit" class="btn btn-primary">Add</button>            
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div  > <!-- It is important to set position of parent container to "relative" -->
+    <div ngxUiLoaderBlurred [loaderId]="'loader-01'">
+        <div class="event-list-wrapper" *ngFor="let item of subEvent">
+            <!--     <app-event-elem></app-event-elem>-->
+            <div class="box" >
+                <div class="event-elem-wrapper" >
+                    <div class="event-header">
+                        <div class="image-wrapper">
+                            <img class="circular" src="{{item.userPic}}" width="50px" height="50px">
+                        </div>
+                        <div class="name-time">
+                            <div class="club-name">{{item.userName}}</div>
+                            <div class="post-time">{{item.creationDate |date}}</div>
+                        </div>
+            
+                        <div style="    margin-left: 362px;">
+                            <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item >
+                                    <mat-icon>update</mat-icon>
+                                    <span>Update</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>delete_outline</mat-icon>
+                                    <span>delete</span>
+                                </button>
+            
+                            </mat-menu>
+            
+                        </div>
+                        
+                    </div>
+                    <div class="event-body">
+                        <h3 class="event-title">{{item.title}}</h3>
+                        <p>
+                            {{item.text}}
+                        </p>        
+                        <div class="body-image-wrapper">
+                            <img src="{{item.imgUrl}}" width="100%" class="body-image-wrapper">
+                        </div>
+                    </div>
+                    <div class="event-footer">
+                        <div #reactions (click)="selectedReact(0,item.id,$event)" [ngClass]="item.userIntercation=='notInterested' ? 'reaction transition-2s selected' : 'reaction transition-2s' " >
+                            <fa-icon [icon]="notInterestedIcon"></fa-icon><span *ngIf="NotInterestedLength==0;else span2">Not Interested</span>
+                                                                          <ng-template #span2><span>Not Interested {{NotInterestedLength}}</span></ng-template>
+                        </div>
+                        <div #reactions (click)="selectedReact(1,item.id,$event)" [ngClass]="item.userIntercation=='interested' ? 'reaction transition-2s selected' : 'reaction transition-2s' " >
+                            <fa-icon [icon]="interestedIcon" ></fa-icon><span *ngIf="InterestedLength==0;else span3">Interested</span>
+                            <ng-template #span3><span>Interested {{InterestedLength}}</span></ng-template>
+                        </div>
+                        <div #reactions (click)="selectedReact(2,item.id,$event)" [ngClass]="item.userIntercation=='going' ? 'reaction transition-2s selected' : 'reaction transition-2s' ">
+                            <fa-icon [icon]="goingIcon"></fa-icon><span *ngIf="goingLength==0;else span4">Going</span>
+                            <ng-template #span4><span>Going {{goingLength}}</span></ng-template>
+                        </div>
+                    </div>
+                    <hr>
+                    <app-post-reaction-row></app-post-reaction-row>
+                    <hr>
+                </div>
+                <div class="comment-form-wrapper">
+                    <div class="image-wrapper">
+                        <img class="pfp-image" [src]="pfpPath | userDefaultPfp" width="40px" height="40px">
+                    </div>
+                    <div class="input-wrapper">
+                        <input #textInput type="text" (keyup.enter)="postComment()"[(ngModel)]="commentText" [placeholder]="commentInputPlaceholder" class="form-control">
+                        <div class="attachements">
+                            <div class="attach-icon transition-2s">
+                                <fa-icon [icon]="imageIcon"></fa-icon>
+                            </div>
+                            <div class="attach-icon transition-2s">
+                                <fa-icon [icon]="vocalIcon" ></fa-icon>
+                            </div>
+                            <div class="attach-icon transition-2s">
+                                <fa-icon [icon]="documentAttachementIcon" ></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Comment elemmet----->
+                <div class="comment-wrapper">
+                    <div class="comment-header">
+                        <div class="pfp-img-wrapper">
+                            <img class="pfp-img" [src]="pfpPath | userDefaultPfp" width="30px" height="30px">
+                        </div>
+                        <div class="user-name">
+                            <span>
+            <!--                     {{userName | titlecase}} {{userLastName | titlecase}} 
+             -->       
+                foulem
+                          <span class="badge badge-secondary">author</span>
+                            </span>
+                        </div>
+                        <div class="comment-date">
+            <!--                 {{creationDate | date}}
+             -->           
+             8:00
+             </div>
+                    </div>
+                    <div class="comment-body">
+                        <p class="comment-text">my comment</p>
+                       <!--  <div id="options-wrapper" class="options-wrapper">
+                            <div class="dropdown options-trigger">
+                                <button class="btn dropdown-toggle" type="button" id="optionsDropButton" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu transition-2s" aria-labelledby="optionsDropButton">
+                                    <div class="options-list">
+                                        <div class="edit-icon-wrapper transition-2s">
+                                            <fa-icon [icon]="editIcon"></fa-icon>
+                                        </div>
+                                        <div class="delete-icon-wrapper transition-2s">
+                                            <fa-icon [icon]="deleteIcon"></fa-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            </div>    </div>
+    <!-- set loaderId to something that is different from "master" -->
+    <ngx-ui-loader [loaderId]="'loader-01'"></ngx-ui-loader>
+    
+  </div>

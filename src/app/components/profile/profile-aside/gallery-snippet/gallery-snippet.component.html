@@ -1,0 +1,14 @@
+<div class="profile-aside-section">
+    <div class="aside-section-header">
+        <h5>Gallery</h5>
+    </div>
+    <div class="aside-gallery-body">
+        <div *ngFor="let imgName of files"  class="image-line">
+            <img 
+                [src]="basePath+imgName" 
+                [alt]="imgName"
+                width="80px"
+                height="80px">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.aside-gallery-body{
+    display: flex;
+    direction: ltr;
+    flex-wrap: wrap;
+    padding: 2vh 2vw;
+    gap : 3vw;
+    justify-content: center;
+    text-align: center;
+}
+
+.image-wrapper{
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.friend-pfp-image{
+    border-radius: 5px;
+}

@@ -1,0 +1,106 @@
+.nav-bar-component{
+    background-color: rgb(255, 255, 255);
+    padding : 1vh 2vw 0 2vw; 
+    border-radius: 5px;
+    border : 1px solid rgb(8, 75, 131);
+    margin : 0 1vh;
+}
+
+.menu-icon-wrapper{
+    display: flex;
+    color : rgb(8, 75, 131);
+    align-items: center;
+    padding-bottom: 1vh;
+}
+
+.menu-icon-wrapper:hover{
+    color: rgb(66, 191, 221);
+}
+
+.search-wrapper{
+    margin-top: 1vh;
+}
+
+.nav-links-wrapper{
+    width : 50%;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+.nav-links-wrapper{
+    height: 100%;
+    gap : 4px;
+}
+
+.col-md-2{
+    display: flex;
+    justify-content: flex-end;
+    justify-items: center;
+    align-items : center;
+    padding-bottom: 2vh;
+}
+
+.nav-link{
+    padding-top: 1vh;
+    height : 90%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5px;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+
+.nav-link:hover{
+    background-color:rgb(66, 191, 221); 
+}
+
+.a-link{
+    text-decoration: none;
+    color : inherit;
+    font-size: 20px;
+}
+
+.notification-icon-wrapper{
+    display: flex;
+    color: rgb(8, 75, 131);
+    justify-content: flex-end;
+}
+
+.notification-icon-wrapper:hover{
+    color : rgb(66, 191, 221);
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+.chats-icon-wrapper{
+    color : rgb(8, 75, 131)
+}
+
+.chats-icon-wrapper:hover{
+    color : rgb(66, 191, 221);
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+.active-link{
+    background-color: rgb(8, 75, 131);
+    color : white
+}
+
+@media screen and (max-width: 1100px) {
+    .a-link{
+        -webkit-transition: all 0.7s ease 0s;
+        -moz-transition: all 0.7s ease 0s;
+        -o-transition: all 0.7s ease 0s;
+        transition: all 0.7s ease 0s;
+        font-size: medium;
+    }
+}

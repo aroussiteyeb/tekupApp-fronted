@@ -1,0 +1,40 @@
+<div class="nav-bar-component">
+    <div class="row">
+        <div class="first-head-col col">
+            <div class="tile-search row">
+                <div class="menu-icon-wrapper col-md-1">
+                    <fa-icon class="fa-lg" [icon]="menuIcon"></fa-icon>
+                </div>
+                <div class="search-wrapper col">
+                    <app-image-input 
+                        [iconProp]="searchIcon"
+                        [placeholderProp]="searchPalceholder">
+                    </app-image-input>
+                </div>
+            </div>
+        </div>
+        
+        <div class="socond-head-col col">
+            <div class="nav-links-wrapper row">
+                <div class="nav-link col" routerLinkActive="active-link">
+                    <a class="a-link" routerLink="/home">Home</a>
+                </div>
+                <div class="nav-link col" routerLinkActive="active-link">
+                    <a class="a-link" routerLink="/profile/{{currentUserId}}">Profile</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-2">
+            <div class="end-icons-wrapper row">
+                <div class="notification-icon-wrapper col">
+                    <fa-icon class="fa-lg" [icon]="notificationIcon" ></fa-icon>
+                </div>
+                <div class="chats-icon-wrapper col">
+                    <fa-icon class="fa-lg" [icon]="chatsIcon"></fa-icon>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

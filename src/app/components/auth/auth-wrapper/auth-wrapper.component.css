@@ -1,0 +1,13 @@
+.auth-wrapper{
+    width : 60%;
+    height : 70vh;
+    margin : auto;
+    margin-top: 5vh;
+    padding-left: 0;
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 2vh 2vh;
+}
+
+.col{
+    padding:0;
+    height : 100%;
+}

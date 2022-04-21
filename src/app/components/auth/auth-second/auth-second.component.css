@@ -1,0 +1,27 @@
+.auth-second-wrapper{
+    height : 100%;
+    padding-right: 2vw;
+}
+
+li{
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    list-style: none;
+    text-align: center;
+}
+
+.col.active {
+    border-bottom: 3px solid black;
+}
+
+.inner-form{
+    padding-left: 2vw;
+    height:  100%
+}
+
+.row{
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}

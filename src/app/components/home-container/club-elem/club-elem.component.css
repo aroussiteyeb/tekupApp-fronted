@@ -1,0 +1,64 @@
+.club-elem-wrapper{
+    padding : 1vh;
+    display: flex;
+    margin : 5px;
+    flex-direction: row;
+    background-color: white;
+}
+
+.club-logo-wrapper{
+    padding: 1vh;
+    flex-wrap: wrap;
+}
+
+.sect{
+    padding : 1vh;
+}
+
+.club-info-header{
+    display: flex;
+    flex-direction: row;
+}
+
+.sect{
+    flex : auto;
+    flex-wrap: wrap;
+}
+
+.club-name-wrapper{
+    text-align: end;
+}
+
+.club-type-wrapper{
+    text-align: start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: small;
+}
+
+.club-event-count-wrapper{
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+}
+
+.club-event-count-wrapper:hover{
+    background-color: rgb(231, 231, 231);
+    cursor: pointer;
+}
+
+.club-join-button{
+    text-align: center;
+    border-radius: 5px;
+    padding : 5px;
+    background-color: rgb(187, 230, 228) ;
+    color :rgba(0, 0, 0, 0.4);
+    box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 1px;
+}
+
+.club-join-button:hover{
+    background-color: rgb(66, 191, 221);
+    color : rgb(240, 246, 246);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+}
