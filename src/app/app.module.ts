@@ -57,7 +57,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxUiLoaderConfig, NgxUiLoaderModule, PB_DIRECTION, POSITION, SPINNER } from "ngx-ui-loader";
-const rgba = require('color-rgba')
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -117,6 +117,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ChatListPipePipe,
   ],
   imports: [
+    MDBBootstrapModule.forRoot(),
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     MatProgressSpinnerModule,
     MatInputModule,

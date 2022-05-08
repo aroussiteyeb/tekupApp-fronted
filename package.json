@@ -25,6 +25,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@ng-bootstrap/ng-bootstrap": "^12.0.0",
     "@popperjs/core": "^2.11.2",
+    "angular-bootstrap-md": "^13.0.0",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.1",
     "bootstrap": "^5.1.3",

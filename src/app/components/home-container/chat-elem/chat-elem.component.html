@@ -1,4 +1,9 @@
-<div class="chat-member-wrapper">
+<div class="chat-member-wrapper" (click)="sendUserInfoChat(pfpPath,idMember)">
     <img class="pfp" [src]="pfpPath | userDefaultPfp" width="30px" height="30px">
     <span class="username-wrapper"> {{memberName | titlecase}} {{memberLastName | titlecase}} </span>
+    <span *ngIf="chatMember.authenticated" class="state"></span>
+
+    
 </div>
+
+

@@ -13,3 +13,18 @@
     font-weight: 600;
     font-size: 14px;
 }
+
+ .state {
+    position: relative;
+    display: block;
+    background-color: #007E33;
+    height: .65rem;
+    width: .65rem;
+    z-index: 2;
+    margin-left: 1.35rem;
+    left: auto;
+    top: -.5rem;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: .1rem solid #fff;
+  }

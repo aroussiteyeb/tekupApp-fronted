@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ChatService } from 'src/app/services/chat.service';
 import { ProfilePicService } from 'src/app/services/profile-pic.service';
+import { SharingService } from 'src/app/services/sharing.service';
 import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
@@ -15,10 +17,12 @@ export class ChatElemComponent implements OnInit {
   memberName : any;
   memberLastName : any;
   pfpPath ?: string;
+  conversation: import("/Users/robotx/Desktop/tekupApp-fronted/src/models/chat").Chat[] = [];
+  
 
   constructor(
     private profilePicService :ProfilePicService,
-    private utilService : UtilsService) { }
+    private utilService : UtilsService,public share:SharingService,public chatService:ChatService) { }
 
   ngOnInit(): void {
     //get chat member info
@@ -47,5 +51,23 @@ export class ChatElemComponent implements OnInit {
       }
     })
   }
+
+  sendUserInfoChat(userPic:any,reciverId:any)
+  {
+
+    let currentUserId = this.share.getUserSettings()._id
+    console.log("sender  id",currentUserId)
+    console.log("reciver id user",reciverId)
+
+    let senderId=currentUserId
+    this.share.sendPic(userPic)
+    this.chatService.getSingleChat(senderId,reciverId).subscribe((value)=>{
+      this.conversation=value;
+      this.share.setUserChat(this.conversation,reciverId)
+      console.log("converation",this.conversation)
+    })
+  }
+
+
 
 }

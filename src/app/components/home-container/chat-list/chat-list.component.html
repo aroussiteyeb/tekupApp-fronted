@@ -7,7 +7,129 @@
         <app-chat-elem 
             class="chat-elem transition-2s" 
             [chatMember]="chatElem" 
-            *ngFor="let chatElem of chatList | chatListPipe : currentUserId">
+            *ngFor="let chatElem of chatList | chatListPipe : currentUserId" (click)="emitUserInfo(chatElem)" >
         </app-chat-elem>
+
     </div>
 </div>
+
+<!-- Main layout -->
+<main class="mt-n5" *ngIf="showChat">
+    <div class="container">
+  
+      <!-- Grid row -->
+      <div class="row d-flex flex-row-reverse">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mb-4 d-flex flex-row-reverse">
+  
+          <mdb-card class="chat-room small-chat wide" id="myForm" [ngStyle]="{'height':resizbale?'3rem':''}" >
+            <mdb-card-header class="white d-flex justify-content-between p-2" id="toggle" style="cursor: pointer;" (click)="chatResize()">
+                
+              <div class="heading d-flex justify-content-start" >
+                <div class="profile-photo">
+                  <img [src]="pfpPath | userDefaultPfp"  alt="avatar"
+                       class="avatar rounded-circle mr-2 ml-0">
+                  <span *ngIf="userChat.authenticated" class="state"></span>
+                </div>
+                <div class="data">
+                  <p class="name mb-0"><strong>{{userChat.name}} {{userChat.lastName}}</strong></p>
+                  <p class="activity text-muted mb-0" *ngIf="userChat.authenticated">Active now</p>
+                  <p class="activity text-muted mb-0" *ngIf="!userChat.authenticated">offline</p>
+
+                </div>
+              </div>
+              <div class="col-md-6" style="text-align: right ;left: 1rem;">
+                <button type="button" class="btn-close" aria-label="Close" (click)="closeChat()"></button>
+                
+            </div>
+            
+              
+            </mdb-card-header>
+            <div class="my-custom-scrollbar">
+              <mdb-card-body class="p-3">
+                <div class="chat-message">
+                  <div class="media mb-3">
+                    <img class="d-flex rounded mr-2" [src]="pfpPath | userDefaultPfp"
+                         alt="Generic placeholder image">
+                    <div class="media-body">
+                      <p class="my-0">You're friends on Tekup</p>
+                    </div>
+                  </div>
+                <!--   <mdb-card bgColor="bg-primary" class="rounded w-75 float-right z-depth-0 mb-1">
+                    <mdb-card-body class="p-2">
+                      <mdb-card-text class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit voluptatem
+                        cum eum tempore.
+                      </mdb-card-text>
+                    </mdb-card-body>
+                  </mdb-card> -->
+                  <!-- <mdb-card bgColor="bg-primary" class="rounded w-50 float-right z-depth-0 mb-2">
+                    <mdb-card-body class="p-2">
+                      <mdb-card-text class="text-white">Rem suscipit lorum repellendus ditiis?</mdb-card-text>
+                    </mdb-card-body>
+                  </mdb-card> -->
+                  <!-- <mdb-card bgColor="bg-light" class="rounded w-75 z-depth-0 mb-2 message-text">
+                    <mdb-card-body class="p-2">
+                      <mdb-card-text class="black-text">Nostrum minima cupiditate assumenda, atque cumque hic voluptatibus
+                        at corporis maxime quam harum.
+                      </mdb-card-text>
+                    </mdb-card-body>
+                  </mdb-card> -->
+                  <div *ngFor="let item of conversation">
+                  <div class="d-flex justify-content-start" *ngIf="item.currentUserSender.userDistId==senderId">
+                    <div class="profile-photo message-photo">
+                      <img  [src]="pfpPath | userDefaultPfp" alt="avatar"
+                           class="avatar rounded-circle mr-2 ml-0">
+                      <span class="state"></span>
+                    </div>
+                    <mdb-card bgColor="bg-light" class="rounded w-75 z-depth-0 mb-2" >
+                      <mdb-card-body class="p-2">
+                        <mdb-card-text class="black-text">{{item.currentUserSender.userDistId}}.
+                        </mdb-card-text>
+                      </mdb-card-body>
+                    </mdb-card>
+                  </div>
+                  <mdb-card bgColor="bg-primary" class="rounded w-75 float-right z-depth-0 mb-2" *ngIf="item.currentUserSender.userDistId==reciverId">
+                    <mdb-card-body class="p-2">
+                      <mdb-card-text class="text-white">{{item.currentUserSender.message}}
+                      </mdb-card-text>
+                    </mdb-card-body>
+                  </mdb-card>
+                </div>
+                </div>
+              </mdb-card-body>
+            </div>
+            <mdb-card-footer class="text-muted white pt-1 pb-2 px-3">
+              <input type="text" id="exampleForm2" class="form-control" [(ngModel)]="message" (change)="prepareChat()" placeholder="Type a message...">
+              <div>
+                <a>
+                  <mdb-icon far icon="file-image" class="mr-2"></mdb-icon>
+                </a>
+                <a>
+                  <mdb-icon far icon="laugh" class="mr-2"></mdb-icon>
+                </a>
+                <a>
+                  <mdb-icon fas icon="gamepad" class="mr-2"></mdb-icon>
+                </a>
+                <a>
+                  <mdb-icon fas icon="paperclip" class="mr-2"></mdb-icon>
+                </a>
+                <a>
+                  <mdb-icon fas icon="camera" class="mr-2"></mdb-icon>
+                </a>
+                <a>
+                  <mdb-icon fas icon="thumbs-up" class="float-right"></mdb-icon>
+                </a>
+              </div>
+            </mdb-card-footer>
+  
+          </mdb-card>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+  </main>
