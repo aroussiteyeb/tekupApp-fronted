@@ -12,13 +12,16 @@ export class SharingService {
   userPic: any;
   conversation: Chat[] = [];
   reciverChatId: any;
+  senderId: any;
 
   constructor() { }
   
-  setUserChat(conversation: Chat[],reciverId:any) {
+  setUserChat(conversation: Chat[],reciverId:any,senderId:any) {
 
-    this.conversation=conversation
+     this.conversation=conversation
     this.reciverChatId=reciverId
+    this.senderId=senderId
+
    }
 
   setSettings(data: any) {

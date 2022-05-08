@@ -75,26 +75,34 @@
                       </mdb-card-text>
                     </mdb-card-body>
                   </mdb-card> -->
-                  <div *ngFor="let item of conversation">
-                  <div class="d-flex justify-content-start" *ngIf="item.currentUserSender.userDistId==senderId">
-                    <div class="profile-photo message-photo">
-                      <img  [src]="pfpPath | userDefaultPfp" alt="avatar"
-                           class="avatar rounded-circle mr-2 ml-0">
-                      <span class="state"></span>
-                    </div>
+                  <div *ngIf="conversation[0]!==undefined">
+                  <div *ngFor="let item of conversation[0].currentUserSender">
+                  <div *ngIf="item.userDistId==reciverId">
+                   
+                   
                     <mdb-card bgColor="bg-light" class="rounded w-75 z-depth-0 mb-2" >
                       <mdb-card-body class="p-2">
-                        <mdb-card-text class="black-text">{{item.currentUserSender.userDistId}}.
-                        </mdb-card-text>
+                        <div class="profile-photo ">
+                          
+                          <img  [src]="pfpPath | userDefaultPfp" alt="avatar"
+                               class="avatar rounded-circle mr-2 ml-0">
+                          <span class="state"></span>
+
+                          <mdb-card-text class="black-text">{{item.message}}.
+                          </mdb-card-text>
+                         
+                        </div>
+                      
                       </mdb-card-body>
                     </mdb-card>
                   </div>
-                  <mdb-card bgColor="bg-primary" class="rounded w-75 float-right z-depth-0 mb-2" *ngIf="item.currentUserSender.userDistId==reciverId">
+                  <mdb-card bgColor="bg-primary" class="rounded w-75 float-right z-depth-0 mb-2" *ngIf="item.userDistId==senderId">
                     <mdb-card-body class="p-2">
-                      <mdb-card-text class="text-white">{{item.currentUserSender.message}}
+                      <mdb-card-text class="text-white">{{item.message}}
                       </mdb-card-text>
                     </mdb-card-body>
                   </mdb-card>
+                </div>
                 </div>
                 </div>
               </mdb-card-body>

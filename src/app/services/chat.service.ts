@@ -20,6 +20,12 @@ export class ChatService {
   {
      return this.http.get<Chat[]>(this.baseUrl+"/"+"read"+"/"+senderId+"/"+reciverId);
   }
+
+  getChats():Observable<Chat[]>
+  {
+     return this.http.get<Chat[]>(this.baseUrl);
+  }
+
 createChat(senderId:any,reciverId:any,chat:Chat):Observable<any>
   {
     return this.http.post(this.baseUrl+"/"+"create"+"/"+senderId+"/"+reciverId,chat, {observe: 'response'});

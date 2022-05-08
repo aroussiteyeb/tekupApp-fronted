@@ -36,9 +36,16 @@ export class ChatListComponent implements OnInit {
   
     //getting users for chat list 
     this.getUsers();
+    this.chatService.getSingleChat(this.senderId,this.reciverId).subscribe((value)=>{
+      this.conversation=value
+      console.log("conversation in list",this.conversation)
+    
+    })
     
 
   }
+
+  
 
   getUsers(){
     this.userService.getUsers().subscribe({
@@ -51,13 +58,24 @@ export class ChatListComponent implements OnInit {
     })
   }
 
-  emitUserInfo(chatElem:any)
+   emitUserInfo(chatElem:any)
   {
+    this.senderId = this.share.getUserSettings()._id
+      this.reciverId = this.share.reciverChatId
     this.showChat=true
-    this.conversation=this.share.conversation
-    if(this.showChat)
+this.chatService.getSingleChat(this.senderId,this.reciverId).subscribe((value)=>{
+  this.conversation=value
+  console.log("conversation in list",this.conversation)
+
+})
+    
+      this.conversation= this.share.conversation
+    if(this.conversation.length==0)
     {
-      this.getchat()
+      this.conversation= this.share.conversation
+
+    console.log("conversation in list",this.conversation.length)
+
     }
     console.log("user info",chatElem)
     this.userChat=chatElem
@@ -91,17 +109,7 @@ export class ChatListComponent implements OnInit {
   }
 
 
-  getchat()
-  {
 
-    this.senderId = this.share.getUserSettings()._id
-    this.reciverId = this.share.reciverChatId
-    this.chatService.getSingleChat(this.senderId,this.reciverId).subscribe((value)=>{
-      this.conversation=value;
-      this.share.setUserChat(this.conversation,this.reciverId)
-      console.log("converation in element",this.conversation)
-    })
-  }
 
   prepareChat()
   {
@@ -111,13 +119,20 @@ export class ChatListComponent implements OnInit {
     console.log("sender  id",this.senderId)
     console.log("reciver id user",this.reciverId)
     console.log("chat prepare")
-    let chat={
+    let chat:any={
       "message":this.message,
       "userDistId":this.senderId,
     }
     let conversation=new Chat(this.senderId,this.reciverId,chat)
     this.chatService.createChat(this.senderId,this.reciverId,conversation).subscribe(()=>{
       console.log("message saved")
+      this.chatService.getSingleChat(this.senderId,this.reciverId).subscribe((value)=>{
+        this.conversation=value
+        console.log("conversation in list",this.conversation)
+      
+      })
+      this.message=""
+      
     })
   }
 

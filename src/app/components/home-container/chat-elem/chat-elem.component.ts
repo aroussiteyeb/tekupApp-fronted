@@ -18,6 +18,8 @@ export class ChatElemComponent implements OnInit {
   memberLastName : any;
   pfpPath ?: string;
   conversation: import("/Users/robotx/Desktop/tekupApp-fronted/src/models/chat").Chat[] = [];
+  chat: import("/Users/robotx/Desktop/tekupApp-fronted/src/models/chat").Chat[] = [];
+  chatLength!: number;
   
 
   constructor(
@@ -30,6 +32,7 @@ export class ChatElemComponent implements OnInit {
   
     //get chat member pfp
     this.getProfilePic()
+    this.getChat()
   }
 
   getMemberInfo(){
@@ -52,20 +55,39 @@ export class ChatElemComponent implements OnInit {
     })
   }
 
+
+  getChat()
+  {
+    let currentUserId = this.share.getUserSettings()._id
+
+   this.chatService.getSingleChat(this.idMember,currentUserId).subscribe((chat)=>{
+     this.chat=chat;
+     this.chatLength=this.chat[0].currentUserSender.length
+     console.log("length chat user",this.chatLength)
+   })
+  }
+ 
+
   sendUserInfoChat(userPic:any,reciverId:any)
   {
+
+    
 
     let currentUserId = this.share.getUserSettings()._id
     console.log("sender  id",currentUserId)
     console.log("reciver id user",reciverId)
 
     let senderId=currentUserId
-    this.share.sendPic(userPic)
     this.chatService.getSingleChat(senderId,reciverId).subscribe((value)=>{
       this.conversation=value;
-      this.share.setUserChat(this.conversation,reciverId)
-      console.log("converation",this.conversation)
+      console.log("converation in element",this.conversation)
     })
+
+    
+    
+    this.share.setUserChat(this.conversation,reciverId,senderId)
+    this.share.sendPic(userPic)
+    
   }
 
 

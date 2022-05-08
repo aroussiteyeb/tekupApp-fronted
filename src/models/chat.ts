@@ -3,10 +3,10 @@ export class Chat {
 
         public senderId : any, 
         public secondSenderId : any,
-       public currentUserSender :{
+       public currentUserSender :[{
             message:any,
             userDistId:any,
-        }
+        }]
 
     ){}
       
